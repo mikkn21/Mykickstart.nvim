@@ -25,7 +25,7 @@ return {
 						['<C-d>'] = false,
 					},
 				},
-			},
+		},
 		}
 
 		-- Enable telescope fzf native, if installed
@@ -37,7 +37,7 @@ return {
 			local current_file = vim.api.nvim_buf_get_name(0)
 			local current_dir
 			local cwd = vim.fn.getcwd()
-			-- If the buffer is not associated with a file, return nil
+	 		-- If the buffer is not associated with a file, return nil
 			if current_file == '' then
 				current_dir = cwd
 			else
@@ -57,7 +57,7 @@ return {
 		local function live_grep_git_root()
 			local git_root = find_git_root()
 			if git_root then
-				telescope.builtin.live_grep {
+				t_builtin.live_grep {
 					search_dirs = { git_root },
 				}
 			end
@@ -101,33 +101,35 @@ return {
 		keymap.set('n', '<leader>/', current_buffer_fuzzy_find, { desc = '[/] Fuzzily search in current buffer' })
 
 		-- Search in open files using live grep
-		keymap.set('n', '<leader>s/', telescope_live_grep_open_files, { desc = '[S]earch [/] in Open Files' })
+		keymap.set('n', '<leader>f/', telescope_live_grep_open_files, { desc = '[F]ind [/] in only  Open Files' })
 
 		-- Select Telescope search options
-		keymap.set('n', '<leader>ss', t_builtin.builtin, { desc = '[S]earch [S]elect Telescope' })
+		--Lists all of the community maintained pickers built into Telescope
+		keymap.set('n', '<leader>fss', t_builtin.builtin, { desc = '[F]ind [S]econd [S]elect Telescope' })
 
 		-- Search Git files
-		keymap.set('n', '<leader>gf', t_builtin.git_files, { desc = 'Search [G]it [F]iles' })
+		keymap.set('n', '<leader>fsg', t_builtin.git_files, { desc = '[F]ind [S]econd Search [G]it files' })
 
 		-- Search files
-		keymap.set('n', '<leader>sf', t_builtin.find_files, { desc = '[S]earch [F]iles' })
+		keymap.set('n', '<leader>ff', t_builtin.find_files, { desc = '[F]ind [F]iles' })
 
 		-- Search help tags
-		keymap.set('n', '<leader>shd', t_builtin.help_tags, { desc = '[S]earch [H]elp' })
+		--Lists available help tags and opens a new window with the relevant help
+		keymap.set('n', '<leader>fsh', t_builtin.help_tags, { desc = '[F]ind [S]econd [H]elp' })
 
 		-- Search the current word
-		keymap.set('n', '<leader>sw', t_builtin.grep_string, { desc = '[S]earch current [W]ord' })
-
+		keymap.set('n', '<leader>fw', t_builtin.grep_string, { desc = '[F]ind current [W]ord' })
+ 
 		-- Search by grep
-		keymap.set('n', '<leader>sg', t_builtin.live_grep, { desc = '[S]earch by [G]rep' })
+		keymap.set('n', '<leader>fg', t_builtin.live_grep, { desc = '[F]ind all by [G]rep in current dir' })
 
 		-- Search by grep in Git root directory
-		keymap.set('n', '<leader>sG', ':LiveGrepGitRoot<cr>', { desc = '[S]earch by [G]rep on Git Root' })
+		keymap.set('n', '<leader>fG', ':LiveGrepGitRoot<cr>', { desc = '[F]ind by [G]rep on Git Root' })
 
 		-- Search diagnostics
-		keymap.set('n', '<leader>sd', t_builtin.diagnostics, { desc = '[S]earch [D]iagnostics' })
+		keymap.set('n', '<leader>fd', t_builtin.diagnostics, { desc = '[F]ind [D]iagnostics' })
 
 		-- Resume previous Telescope search
-		keymap.set('n', '<leader>sr', t_builtin.resume, { desc = '[S]earch [R]esume' })
+		keymap.set('n', '<leader>fr', t_builtin.resume, { desc = '[F]ind [R]esume' })
 	end,
 }
