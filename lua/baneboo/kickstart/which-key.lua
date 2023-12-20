@@ -24,6 +24,12 @@ return {
             ['<leader>s'] = { name = '[S]earch', _ = 'which_key_ignore' },
             ['<leader>t'] = { name = '[T]oggle', _ = 'which_key_ignore' },
             ['<leader>w'] = { name = '[W]orkspace', _ = 'which_key_ignore' },
+            ['<leader>f'] = {
+                name = '[F]ind',
+                _ = 'which_key_ignore',
+                s = { name = '[S]econd layer' },
+                -- Add other bindings for '<leader>f' submenu if needed
+            },
             -- Add additional keybindings as needed
         })
 
