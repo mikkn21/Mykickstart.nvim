@@ -72,3 +72,5 @@ opt.swapfile = false
 
 opt.colorcolumn = "80" -- show column on the right
 opt.scrolloff = 15 -- scroll offset
+
+

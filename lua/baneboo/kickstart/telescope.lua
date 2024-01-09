@@ -1,4 +1,4 @@
--- Fuzzy Finder (files, lsp, etc)
+-- Fuzzy Finder (files, lsp, etc)tele
 return {
 	'nvim-telescope/telescope.nvim',
 	branch = '0.1.x',

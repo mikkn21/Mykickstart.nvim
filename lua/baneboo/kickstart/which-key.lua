@@ -3,8 +3,6 @@ return {
     -- Specify the plugin path
     'folke/which-key.nvim',
 
-    -- Optional: specify any dependencies if needed
-
     -- which-key setup function
     config = function()
         local which_key = require('which-key')
@@ -30,7 +28,7 @@ return {
                 s = { name = '[S]econd layer' },
                 -- Add other bindings for '<leader>f' submenu if needed
             },
-            ['<leader>l'] = { name = '[L]Harpoon', _ = 'which_key_ignore' },
+            ['<leader>m'] = { name = 'Harpoon [M]ark', _ = 'which_key_ignore' },
             -- Add additional keybindings as needed
         })
 
