@@ -42,8 +42,8 @@ return {
             nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
             -- See `:help K` for why this keymap
-            nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
-            nmap('<leader>k', vim.lsp.buf.signature_help, 'Signature Documentation')
+            nmap('<leader>dH', vim.lsp.buf.hover, 'Hover Documentation')
+            nmap('<leader>dh', vim.lsp.buf.signature_help, 'Signature Documentation')
 
             -- Lesser used LSP functionality
             nmap('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
